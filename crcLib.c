@@ -272,6 +272,33 @@ uint8_t crc8_maxim(uint8_t *data, uint16_t length)
 }
 
 /******************************************************************************
+ * Name:    CRC-8/Tamagawa         x8+1
+ * Poly:    0x01
+ * Init:    0x00
+ * Refin:   True          [LSB first]
+ * Refout:  True
+ * Xorout:  0x00
+ * Use:     Tamagawa's encoder devices,e.g. TS5643N5194
+ *****************************************************************************/
+uint8_t crc8_tamagawa(uint8_t *data, uint16_t length)
+{
+    uint8_t i;
+    uint8_t crc = 0;         // Initial value
+    while(length--)
+    {
+        crc ^= *data++;        // crc ^= *data; data++;
+        for (i = 0; i < 8; i++)
+        {
+            if (crc & 1)
+                crc = (crc >> 1) ^ 0x80;        // 0x80 = reverse 0x01
+            else
+                crc >>= 1;
+        }
+    }
+    return crc;
+}
+
+/******************************************************************************
  * Name:    CRC-16/IBM          x16+x15+x2+1
  * Poly:    0x8005
  * Init:    0x0000
