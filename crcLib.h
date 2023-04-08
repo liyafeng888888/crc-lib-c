@@ -13,6 +13,7 @@ uint8_t crc8(uint8_t *data, uint16_t length);
 uint8_t crc8_itu(uint8_t *data, uint16_t length);
 uint8_t crc8_rohc(uint8_t *data, uint16_t length);
 uint8_t crc8_maxim(uint8_t *data, uint16_t length);//DS18B20
+uint8_t crc8_tamagawa(uint8_t *data, uint16_t length);//TS5643N5194
 uint16_t crc16_ibm(uint8_t *data, uint16_t length);
 uint16_t crc16_maxim(uint8_t *data, uint16_t length);
 uint16_t crc16_usb(uint8_t *data, uint16_t length);
