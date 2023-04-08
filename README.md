@@ -15,6 +15,7 @@
 | CRC-8/ITU          | x8 +  x2 + x + 1                                             | 8     | 07       | 00       | 55       | FALSE | FALSE  |
 | CRC-8/ROHC         | x8 +  x2 + x + 1                                             | 8     | 07       | FF       | 00       | TRUE  | TRUE   |
 | CRC-8/MAXIM        | x8 +  x5 + x4 + 1                                            | 8     | 31       | 00       | 00       | TRUE  | TRUE   |
+| CRC-8/Tamagawa     | x8 +  1                                                      | 8     | 01       | 00       | 00       | TRUE  | TRUE   |
 | CRC-16/IBM         | x16 +  x15 + x2 + 1                                          | 16    | 8005     | 0000     | 0000     | TRUE  | TRUE   |
 | CRC-16/MAXIM       | x16 +  x15 + x2 + 1                                          | 16    | 8005     | 0000     | FFFF     | TRUE  | TRUE   |
 | CRC-16/USB         | x16 +  x15 + x2 + 1                                          | 16    | 8005     | FFFF     | FFFF     | TRUE  | TRUE   |
